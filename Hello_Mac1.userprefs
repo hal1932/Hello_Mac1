@@ -1,1 +1,14 @@
-﻿<Properties StartupItem="Hello_Mac1/Hello_Mac1.csproj" />
+﻿<Properties StartupItem="Hello_Mac1/Hello_Mac1.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hello_Mac1/TestDataItem.cs">
+    <Files>
+      <File FileName="Hello_Mac1/ViewController.cs" Line="36" Column="4" />
+      <File FileName="Hello_Mac1/TestDataItem.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Hello__Mac1 PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

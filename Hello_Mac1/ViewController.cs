@@ -21,15 +21,29 @@ namespace Hello_Mac1
 
 			var item = Storyboard.InstantiateControllerWithIdentifier("TestDataItemContainer") as NSCollectionViewItem;
 			CollectionView.ItemPrototype = item;
-			CollectionView.Content = Enumerable.Range(0, 10)
-				.Select(i => new TestDataItem(i.ToString()))
-				.ToArray();
+
+			for (var i = 0; i < 10; ++i)
+			{
+				ItemArray.AddObject(new TestDataItem("name" + i.ToString("D2")));
+			}
+			ItemArray.SelectionIndex = 0;
+		}
+
+		public override void AwakeFromNib()
+		{
+			base.AwakeFromNib();
+
+			ItemArray.AddObserver(
+				"selectionIndex",
+				NSKeyValueObservingOptions.New,
+				_ => Console.WriteLine((ItemArray.SelectedObjects.FirstOrDefault() as TestDataItem)?.Name));
 		}
 
 		partial void OnTestButtonClicked(NSObject sender)
 		{
 			++_clickedCount;
 			TestLabel.StringValue = _clickedCount.ToString();
+			ItemArray.SelectionIndex = (ulong)_clickedCount;
 		}
 
 		public override NSObject RepresentedObject

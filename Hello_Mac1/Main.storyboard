@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -689,12 +690,13 @@
                                     <rect key="frame" x="1" y="1" width="438" height="193"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView ambiguous="YES" id="M8R-cq-ZW5">
+                                        <collectionView ambiguous="YES" selectable="YES" maxNumberOfColumns="1" id="M8R-cq-ZW5">
                                             <rect key="frame" x="0.0" y="0.0" width="438" height="193"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <binding destination="o07-Hq-gje" name="content" keyPath="arrangedObjects" id="JoC-dM-FUk"/>
+                                                <binding destination="o07-Hq-gje" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="JoC-dM-FUk" id="QrJ-7U-Hqx"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
@@ -728,6 +730,7 @@
                     </view>
                     <connections>
                         <outlet property="CollectionView" destination="M8R-cq-ZW5" id="nYS-xH-tJB"/>
+                        <outlet property="ItemArray" destination="o07-Hq-gje" id="EuT-I9-XJP"/>
                         <outlet property="TestButton" destination="GQJ-QA-d3c" id="Xn0-ha-SV5"/>
                         <outlet property="TestLabel" destination="8ku-og-K0R" id="Cpz-NC-0UD"/>
                     </connections>
@@ -746,11 +749,11 @@
             <objects>
                 <collectionViewItem storyboardIdentifier="TestDataItemContainer" id="yEl-lw-sZ1" sceneMemberID="viewController">
                     <view key="view" id="nwJ-WX-Qu9">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHu-Hi-qdh">
-                                <rect key="frame" x="32" y="42" width="37" height="17"/>
+                                <rect key="frame" x="-2" y="10" width="104" height="30"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="E7I-ej-f6b">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -760,6 +763,22 @@
                                     <binding destination="yEl-lw-sZ1" name="value" keyPath="representedObject.Name" id="xQR-ez-lI3"/>
                                 </connections>
                             </textField>
+                            <box fixedFrame="YES" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="djj-ha-Soa">
+                                <rect key="frame" x="-3" y="-4" width="106" height="56"/>
+                                <view key="contentView" ambiguous="YES" id="QTL-wt-3U8">
+                                    <rect key="frame" x="1" y="1" width="104" height="54"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <binding destination="yEl-lw-sZ1" name="hidden" keyPath="self.selected" id="9Jv-WE-MeA">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </box>
                         </subviews>
                     </view>
                 </collectionViewItem>

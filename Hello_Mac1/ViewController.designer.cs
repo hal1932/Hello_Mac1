@@ -16,6 +16,9 @@ namespace Hello_Mac1
 		AppKit.NSCollectionView CollectionView { get; set; }
 
 		[Outlet]
+		AppKit.NSArrayController ItemArray { get; set; }
+
+		[Outlet]
 		AppKit.NSButton TestButton { get; set; }
 
 		[Outlet]
@@ -26,6 +29,11 @@ namespace Hello_Mac1
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (ItemArray != null) {
+				ItemArray.Dispose ();
+				ItemArray = null;
+			}
+
 			if (CollectionView != null) {
 				CollectionView.Dispose ();
 				CollectionView = null;
