@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Hello_Mac1/Hello_Mac1.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Hello_Mac1/TestDataItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hello_Mac1/ViewController.cs">
     <Files>
-      <File FileName="Hello_Mac1/ViewController.cs" Line="36" Column="4" />
-      <File FileName="Hello_Mac1/TestDataItem.cs" Line="1" Column="1" />
+      <File FileName="Hello_Mac1/ViewController.cs" Line="29" Column="33" />
+      <File FileName="Hello_Mac1/TestDataItem.cs" Line="16" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
